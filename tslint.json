@@ -1,5 +1,5 @@
 {
-  "rulesDirectory": ["node_modules/@nrwl/schematics/src/tslint"],
+  "rulesDirectory": ["node_modules/@nrwl/workspace/src/tslint"],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -48,13 +48,15 @@
     "triple-equals": [true, "allow-null-check"],
     "unified-signatures": true,
     "variable-name": false,
-
     "nx-enforce-module-boundaries": [
       true,
       {
         "allow": [],
         "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
         ]
       }
     ]
