@@ -7,5 +7,12 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "rekt-league-ui-e2e": {
+      "tags": []
+    },
+    "rekt-league-ui": {
+      "tags": []
+    }
+  }
 }
