@@ -1,0 +1,12 @@
+<mat-toolbar class="custom-bar justify-content-between">
+  <img src="assets/logo.png" alt="" srcset="" class="logo" />
+  <span>
+    <mat-form-field>
+      <mat-select [(ngModel)]="selectedSeason">
+        <mat-option *ngFor="let opt of seasonOpts" [value]="opt">{{
+          opt
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </span>
+</mat-toolbar>
