@@ -1,12 +1,24 @@
 <mat-toolbar class="custom-bar justify-content-between">
   <img src="assets/logo.png" alt="" srcset="" class="logo" />
   <span>
-    <mat-form-field>
-      <mat-select [(ngModel)]="selectedSeason">
-        <mat-option *ngFor="let opt of seasonOpts" [value]="opt">{{
-          opt
-        }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <!-- other options here -->
+    <span>Players</span>
+    <span>Teams</span>
+    <span>Champions</span>
+    <span>Graphs</span>
+
+    <button mat-button [matMenuTriggerFor]="menu" class="pr-1">
+      {{ selectedSeason }} <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        *ngFor="let opt of seasonOpts"
+        (click)="selectedSeason = opt"
+      >
+        {{ opt }}
+      </button>
+    </mat-menu>
+
   </span>
 </mat-toolbar>
