@@ -1,3 +1,25 @@
-<div class="container-fluid d-flex justify-content-center pt-3">
-  <h1 class="season-header d-inline-block"><span>SEASON</span> <span class="text-p ml-4">{{seasonService.getCurrentlySelectedSeason()}}</span></h1>
+<h1 class="season-header d-block w-100 text-center">
+  <span>SEASON</span>
+  <span class="text-p ml-4">{{
+    seasonService.getCurrentlySelectedSeason()
+  }}</span>
+</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden">
+        <mat-card-header class="justify-content-center">
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title><h1>Season Champions</h1></mat-card-title>
+          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+
+        <img
+          class="mat-card-image"
+          src="http://rektleague.com/media/stats/team_splashes/infernal-drake_ce4BE7n.png"
+          alt=""
+        />
+      </mat-card>
+    </div>
+  </div>
 </div>

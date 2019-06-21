@@ -16,3 +16,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cdk-mouse-focused, .cdk-touch-focused, .cdk-program-focused{
   outline: none !important;
 }
+
+.overflow-hidden{
+  overflow: hidden;
+}
