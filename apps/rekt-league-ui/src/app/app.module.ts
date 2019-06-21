@@ -16,6 +16,7 @@ import { TeamsOverviewComponent } from './teams-overview/teams-overview.componen
 import { ChampionsOverviewComponent } from './champions-overview/champions-overview.component';
 import { AboutComponent } from './about/about.component';
 import { SeasonHeaderComponent } from './season-header/season-header.component';
+import { SeasonGraphsComponent } from './season-graphs/season-graphs.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SeasonHeaderComponent } from './season-header/season-header.component';
     TeamsOverviewComponent,
     ChampionsOverviewComponent,
     AboutComponent,
-    SeasonHeaderComponent
+    SeasonHeaderComponent,
+    SeasonGraphsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { SeasonHeaderComponent } from './season-header/season-header.component';
         { path: 'teams', component: TeamsOverviewComponent },
         { path: 'players', component: PlayersOverviewComponent },
         { path: 'champions', component: ChampionsOverviewComponent },
-        { path: 'graphs', component: SeasonOverviewComponent },
+        { path: 'graphs', component: SeasonGraphsComponent },
         { path: 'about', component: AboutComponent },
         { path: '', pathMatch: 'full', redirectTo: 'season' }
       ],
