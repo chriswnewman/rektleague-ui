@@ -8,9 +8,8 @@ describe('SeasonGraphsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SeasonGraphsComponent ]
-    })
-    .compileComponents();
+      declarations: [SeasonGraphsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

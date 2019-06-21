@@ -15,5 +15,8 @@ export class MainNavComponent {
     .observe(`(max-width: ${this.SMALL_WIDTH_BREAKPOINT}px)`)
     .pipe(map(result => result.matches));
 
-  constructor(private breakpointObserver: BreakpointObserver, public seasonService: SeasonService) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    public seasonService: SeasonService
+  ) {}
 }

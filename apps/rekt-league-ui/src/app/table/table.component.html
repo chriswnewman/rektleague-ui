@@ -10,7 +10,7 @@
       <mat-header-cell
         *matHeaderCellDef
         mat-sort-header
-        [ngClass]="{'flex-shrink': col.flexBasis}"
+        [ngClass]="{ 'flex-shrink': col.flexBasis }"
         [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
       >
         {{ col.displayName }}
@@ -19,7 +19,7 @@
     <ng-container *ngIf="!col.sortable">
       <mat-header-cell
         *matHeaderCellDef
-        [ngClass]="{'flex-shrink': col.flexBasis}"
+        [ngClass]="{ 'flex-shrink': col.flexBasis }"
         [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
       >
         {{ col.displayName }}
@@ -27,7 +27,7 @@
     </ng-container>
     <mat-cell
       *matCellDef="let row"
-      [ngClass]="{'flex-shrink': col.flexBasis}"
+      [ngClass]="{ 'flex-shrink': col.flexBasis }"
       [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
     >
       {{ row[col.key] }}

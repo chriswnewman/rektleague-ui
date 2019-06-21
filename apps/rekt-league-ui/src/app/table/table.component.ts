@@ -25,7 +25,7 @@ export class TableComponent implements AfterViewInit, OnInit {
   displayedColumns: string[];
 
   ngOnInit() {
-    this.displayedColumns = this.columnConfigs.map((config) => config.key);
+    this.displayedColumns = this.columnConfigs.map(config => config.key);
     this.dataSource = new MatTableDataSource(this.data);
   }
 

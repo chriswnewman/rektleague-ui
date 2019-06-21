@@ -8,10 +8,7 @@ import { SeasonService } from '../services/season.service';
 })
 export class SeasonHeaderComponent implements OnInit {
   @Input() mode: 'season' | 'header' = 'season';
-  constructor(public seasonService: SeasonService) { }
+  constructor(public seasonService: SeasonService) {}
 
   ngOnInit() {}
-
-
-
 }

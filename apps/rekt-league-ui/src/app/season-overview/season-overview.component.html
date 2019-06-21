@@ -25,14 +25,17 @@
       </mat-card>
 
       <!-- Standings -->
-      <mat-card class="mat-elevation-z5 overflow-hidden mb-5">
-          <mat-card-header>
-            <mat-card-title>Team Standings</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <rekt-table [data]="standingsData" [columnConfigs]="standingsTableConfig"></rekt-table>
-          </mat-card-content>
-        </mat-card>
+      <mat-card class="mat-elevation-z5 overflow-hidden">
+        <mat-card-header>
+          <mat-card-title>Team Standings</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <rekt-table
+            [data]="standingsData"
+            [columnConfigs]="standingsTableConfig"
+          ></rekt-table>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>
