@@ -1,0 +1,49 @@
+<mat-table
+  class="full-width-table"
+  matSort
+  aria-label="Elements"
+  [dataSource]="dataSource"
+>
+  <!-- NgFor Columns -->
+  <ng-container *ngFor="let col of columnConfigs" matColumnDef="{{ col.key }}">
+    <ng-container *ngIf="col.sortable">
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        [ngClass]="{'flex-shrink': col.flexBasis}"
+        [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
+      >
+        {{ col.displayName }}
+      </mat-header-cell>
+    </ng-container>
+    <ng-container *ngIf="!col.sortable">
+      <mat-header-cell
+        *matHeaderCellDef
+        [ngClass]="{'flex-shrink': col.flexBasis}"
+        [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
+      >
+        {{ col.displayName }}
+      </mat-header-cell>
+    </ng-container>
+    <mat-cell
+      *matCellDef="let row"
+      [ngClass]="{'flex-shrink': col.flexBasis}"
+      [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
+    >
+      {{ row[col.key] }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<mat-paginator
+  *ngIf="paginate"
+  #paginator
+  [length]="dataSource?.data.length"
+  [pageIndex]="0"
+  [pageSize]="50"
+  [pageSizeOptions]="[25, 50, 100, 250]"
+>
+</mat-paginator>

@@ -17,6 +17,7 @@ import { ChampionsOverviewComponent } from './champions-overview/champions-overv
 import { AboutComponent } from './about/about.component';
 import { SeasonHeaderComponent } from './season-header/season-header.component';
 import { SeasonGraphsComponent } from './season-graphs/season-graphs.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SeasonGraphsComponent } from './season-graphs/season-graphs.component';
     ChampionsOverviewComponent,
     AboutComponent,
     SeasonHeaderComponent,
-    SeasonGraphsComponent
+    SeasonGraphsComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@
       </mat-card>
 
       <!-- Schedule -->
-      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
+      <mat-card class="mat-elevation-z5 overflow-hidden mb-5">
         <mat-card-header>
           <mat-card-title>Schedule</mat-card-title>
         </mat-card-header>
@@ -25,12 +25,12 @@
       </mat-card>
 
       <!-- Standings -->
-      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
+      <mat-card class="mat-elevation-z5 overflow-hidden mb-5">
           <mat-card-header>
-            <mat-card-title>Standings</mat-card-title>
+            <mat-card-title>Team Standings</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            Standings table goes here
+            <rekt-table [data]="standingsData" [columnConfigs]="standingsTableConfig"></rekt-table>
           </mat-card-content>
         </mat-card>
     </div>
