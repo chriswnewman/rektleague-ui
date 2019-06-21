@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatDrawer } from '@angular/material';
 import { SeasonService } from '../services/season.service';
@@ -8,7 +8,7 @@ import { SeasonService } from '../services/season.service';
   templateUrl: './app-header-bar.component.html',
   styleUrls: ['./app-header-bar.component.scss']
 })
-export class AppHeaderBarComponent implements OnInit, OnChanges {
+export class AppHeaderBarComponent implements OnInit {
 
   @Input() isSmallScreen$: Observable<boolean>;
   @Input() drawer: MatDrawer;
@@ -16,10 +16,6 @@ export class AppHeaderBarComponent implements OnInit, OnChanges {
   constructor(public seasonService: SeasonService) { }
 
   ngOnInit() {
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
   }
 
 }

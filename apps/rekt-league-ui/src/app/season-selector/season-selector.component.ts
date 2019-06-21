@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SeasonService } from '../services/season.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SeasonService } from '../services/season.service';
   templateUrl: './season-selector.component.html',
   styleUrls: ['./season-selector.component.css']
 })
-export class SeasonSelectorComponent implements OnInit, OnChanges {
+export class SeasonSelectorComponent implements OnInit {
 
   seasonOpts = [5,4,3,2,1];
   selectedSeason = 'Season 5';
@@ -14,11 +14,5 @@ export class SeasonSelectorComponent implements OnInit, OnChanges {
 
   constructor(public seasonService: SeasonService) { }
 
-  ngOnInit() {
-    console.log(this.layout)
-  }
-
-  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
-    console.log(changes);
-  }
+  ngOnInit() {}
 }

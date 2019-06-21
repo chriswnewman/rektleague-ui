@@ -8,15 +8,27 @@
 
 @import './scss/theme.scss';
 /* You can add global styles to this file, and also import other style files */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
 
 // fixes
-.cdk-mouse-focused, .cdk-touch-focused, .cdk-program-focused{
+.cdk-mouse-focused,
+.cdk-touch-focused,
+.cdk-program-focused {
   outline: none !important;
 }
 
-.overflow-hidden{
+// utils
+.overflow-hidden {
   overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
