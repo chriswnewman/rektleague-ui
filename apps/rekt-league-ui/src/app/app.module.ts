@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { SeasonHeaderComponent } from './season-header/season-header.component';
 import { SeasonGraphsComponent } from './season-graphs/season-graphs.component';
 import { TableComponent } from './table/table.component';
+import {BsColMeasurementModule} from '@rekt/bs-col-measurement';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TableComponent } from './table/table.component';
     ),
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FormsModule
+    FormsModule,
+    BsColMeasurementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

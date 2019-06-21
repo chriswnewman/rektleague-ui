@@ -118,6 +118,37 @@
           }
         }
       }
+    },
+    "bs-col-measurement": {
+      "projectType": "library",
+      "root": "libs/bs-col-measurement",
+      "sourceRoot": "libs/bs-col-measurement/src",
+      "prefix": "rekt",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/bs-col-measurement/tsconfig.lib.json",
+              "libs/bs-col-measurement/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/bs-col-measurement/jest.config.js",
+            "tsConfig": "libs/bs-col-measurement/tsconfig.spec.json",
+            "setupFile": "libs/bs-col-measurement/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
