@@ -1,6 +1,6 @@
 <h1 class="season-header d-block w-100 text-center">
-  <span>SEASON</span>
-  <span class="text-p ml-4">
-    {{ seasonService.getCurrentlySelectedSeason() }}
+  <span>{{mode==='season'? 'SEASON' : 'ABOUT'}}</span>
+  <span class="text-p {{mode==='about' ? 'ml-1' : 'ml-4'}}">
+    {{mode === 'season' ? seasonService.getCurrentlySelectedSeason() : 'US' }}
   </span>
 </h1>

@@ -1,5 +1,6 @@
 .season-header {
   font-size: 9vw;
+  white-space: nowrap;
   @media (max-width: 768px) {
     font-size: 16vw;
   }
