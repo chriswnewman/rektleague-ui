@@ -60,3 +60,16 @@ $rekt-league-ui-theme: mat-dark-theme($rekt-league-ui-primary, $rekt-league-ui-a
 // that you are using.
 @include angular-material-theme($rekt-league-ui-theme);
 
+
+// Create your Sass color vars (will be available in all the project)
+$primary-color: mat-color($rekt-league-ui-primary);
+$accent-color: mat-color($rekt-league-ui-accent);
+$warn-color: mat-color($rekt-league-ui-warn);
+
+.text-p{
+  color: $primary-color !important;
+}
+
+.bg-p{
+  background-color: $primary-color !important;
+}

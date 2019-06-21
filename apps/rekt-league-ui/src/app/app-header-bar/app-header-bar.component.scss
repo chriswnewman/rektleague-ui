@@ -1,10 +1,12 @@
+@import '../../scss/measurements.scss';
+
 .logo{
   height: 64px;
   // margin-left: 3rem;
 }
 
 .custom-bar{
-  height: 72px;
+  height: $header-bar-height;
   padding-top: 1rem;
   padding-bottom: 1rem;
   position: sticky;

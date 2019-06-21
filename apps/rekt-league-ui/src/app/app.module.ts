@@ -8,8 +8,6 @@ import { AppHeaderBarComponent } from './app-header-bar/app-header-bar.component
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { SeasonOverviewComponent } from './season-overview/season-overview.component';
 
 @NgModule({
@@ -17,17 +15,16 @@ import { SeasonOverviewComponent } from './season-overview/season-overview.compo
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', component: SeasonOverviewComponent },
+      { path: 'season', component: SeasonOverviewComponent },
+      { path: 'teams', component: SeasonOverviewComponent },
+      { path: 'players', component: SeasonOverviewComponent },
+      { path: 'champions', component: SeasonOverviewComponent },
+      { path: 'graphs', component: SeasonOverviewComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'season' }
     ], { initialNavigation: 'enabled', useHash: true }),
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FormsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
