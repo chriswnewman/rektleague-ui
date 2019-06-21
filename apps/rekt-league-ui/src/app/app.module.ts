@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SeasonOverviewComponent } from './season-overview/season-overview.component';
 import { SeasonSelectorComponent } from './season-selector/season-selector.component';
+import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
 
 @NgModule({
-  declarations: [AppComponent, AppHeaderBarComponent, MainNavComponent, SeasonOverviewComponent, SeasonSelectorComponent],
+  declarations: [AppComponent, AppHeaderBarComponent, MainNavComponent, SeasonOverviewComponent, SeasonSelectorComponent, SideNavContentComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
@@ -21,6 +22,7 @@ import { SeasonSelectorComponent } from './season-selector/season-selector.compo
       { path: 'players', component: SeasonOverviewComponent },
       { path: 'champions', component: SeasonOverviewComponent },
       { path: 'graphs', component: SeasonOverviewComponent },
+      { path: 'about', component: SeasonOverviewComponent },
       { path: '', pathMatch: 'full', redirectTo: 'season' }
     ], { initialNavigation: 'enabled', useHash: true }),
     BrowserAnimationsModule,

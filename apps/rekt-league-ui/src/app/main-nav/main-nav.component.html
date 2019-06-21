@@ -12,20 +12,11 @@
     [fixedInViewport]="false"
     [attr.role]="(isSmallScreen$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isSmallScreen$ | async) ? 'push' : 'side'"
-
   >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item [routerLink]="['/season']" routerLinkActive="bg-p" >Season Overview</a>
-      <a mat-list-item [routerLink]="['/players']" routerLinkActive="bg-p">Players</a>
-      <a mat-list-item [routerLink]="['/teams']" routerLinkActive="bg-p">Teams</a>
-      <a mat-list-item [routerLink]="['/champions']" routerLinkActive="bg-p">Champions</a>
-      <a mat-list-item [routerLink]="['/graphs']" routerLinkActive="bg-p">Graphs</a>
-    </mat-nav-list>
-    <rekt-season-selector *ngIf="(isSmallScreen$ | async)" [layout]="'sideNav'"></rekt-season-selector>
+    <rekt-side-nav-content [isSmallScreen$]="isSmallScreen$"></rekt-side-nav-content>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="px-5">
+    <div class="container">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
