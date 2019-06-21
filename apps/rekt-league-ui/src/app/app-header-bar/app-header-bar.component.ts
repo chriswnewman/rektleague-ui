@@ -9,13 +9,10 @@ import { SeasonService } from '../services/season.service';
   styleUrls: ['./app-header-bar.component.scss']
 })
 export class AppHeaderBarComponent implements OnInit {
-
   @Input() isSmallScreen$: Observable<boolean>;
   @Input() drawer: MatDrawer;
 
-  constructor(public seasonService: SeasonService) { }
+  constructor(public seasonService: SeasonService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

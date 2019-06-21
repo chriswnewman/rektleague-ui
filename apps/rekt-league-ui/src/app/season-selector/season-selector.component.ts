@@ -7,12 +7,11 @@ import { SeasonService } from '../services/season.service';
   styleUrls: ['./season-selector.component.css']
 })
 export class SeasonSelectorComponent implements OnInit {
-
-  seasonOpts = [5,4,3,2,1];
+  seasonOpts = [5, 4, 3, 2, 1];
   selectedSeason = 'Season 5';
   @Input() layout: 'sideNav' | 'button' = 'button';
 
-  constructor(public seasonService: SeasonService) { }
+  constructor(public seasonService: SeasonService) {}
 
   ngOnInit() {}
 }

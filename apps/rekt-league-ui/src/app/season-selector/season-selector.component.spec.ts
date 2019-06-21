@@ -8,9 +8,8 @@ describe('SeasonSelectorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SeasonSelectorComponent ]
-    })
-    .compileComponents();
+      declarations: [SeasonSelectorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

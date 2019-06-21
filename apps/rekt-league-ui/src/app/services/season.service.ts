@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SeasonService {
   private currentlySelectedSeason = 5;
-  constructor() { }
+  constructor() {}
 
   getCurrentlySelectedSeason() {
     return this.currentlySelectedSeason;

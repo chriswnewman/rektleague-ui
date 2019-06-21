@@ -4,7 +4,7 @@
   height: calc(#{$header-bar-height} - 8px);
 }
 
-.custom-bar{
+.custom-bar {
   height: $header-bar-height;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -13,6 +13,6 @@
   z-index: 1;
 }
 
-.offset-button-margin{
+.offset-button-margin {
   margin-right: -40px;
 }

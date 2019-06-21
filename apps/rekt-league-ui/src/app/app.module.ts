@@ -13,18 +13,28 @@ import { SeasonSelectorComponent } from './season-selector/season-selector.compo
 import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
 
 @NgModule({
-  declarations: [AppComponent, AppHeaderBarComponent, MainNavComponent, SeasonOverviewComponent, SeasonSelectorComponent, SideNavContentComponent],
+  declarations: [
+    AppComponent,
+    AppHeaderBarComponent,
+    MainNavComponent,
+    SeasonOverviewComponent,
+    SeasonSelectorComponent,
+    SideNavContentComponent
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: 'season', component: SeasonOverviewComponent },
-      { path: 'teams', component: SeasonOverviewComponent },
-      { path: 'players', component: SeasonOverviewComponent },
-      { path: 'champions', component: SeasonOverviewComponent },
-      { path: 'graphs', component: SeasonOverviewComponent },
-      { path: 'about', component: SeasonOverviewComponent },
-      { path: '', pathMatch: 'full', redirectTo: 'season' }
-    ], { initialNavigation: 'enabled', useHash: true }),
+    RouterModule.forRoot(
+      [
+        { path: 'season', component: SeasonOverviewComponent },
+        { path: 'teams', component: SeasonOverviewComponent },
+        { path: 'players', component: SeasonOverviewComponent },
+        { path: 'champions', component: SeasonOverviewComponent },
+        { path: 'graphs', component: SeasonOverviewComponent },
+        { path: 'about', component: SeasonOverviewComponent },
+        { path: '', pathMatch: 'full', redirectTo: 'season' }
+      ],
+      { initialNavigation: 'enabled', useHash: true }
+    ),
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule

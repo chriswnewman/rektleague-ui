@@ -13,7 +13,9 @@
     [attr.role]="(isSmallScreen$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isSmallScreen$ | async) ? 'push' : 'side'"
   >
-    <rekt-side-nav-content [isSmallScreen$]="isSmallScreen$"></rekt-side-nav-content>
+    <rekt-side-nav-content
+      [isSmallScreen$]="isSmallScreen$"
+    ></rekt-side-nav-content>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="container">

@@ -8,9 +8,8 @@ describe('AppHeaderBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppHeaderBarComponent ]
-    })
-    .compileComponents();
+      declarations: [AppHeaderBarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
