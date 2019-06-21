@@ -6,3 +6,11 @@
   flex-shrink: 1;
   flex-grow: 0;
 }
+
+.mat-header-cell:first-of-type, .mat-cell:first-of-type, .mat-footer-cell:first-of-type{
+  padding-left: .25rem;
+}
+
+.mat-header-cell:last-of-type, .mat-cell:last-of-type, .mat-footer-cell:last-of-type{
+  padding-right: .25rem;
+}

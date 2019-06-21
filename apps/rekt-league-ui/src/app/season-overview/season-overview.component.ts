@@ -12,8 +12,8 @@ export class SeasonOverviewComponent implements OnInit {
   constructor(public seasonService: SeasonService) {}
 
   standingsTableConfig: TableColumnConfig[] = [
-    { key: 'rank', displayName: 'Rank', sortable: true, flexBasis: '15%' },
-    { key: 'team', displayName: 'Team', sortable: true },
+    { key: 'rank', displayName: 'Rank', sortable: true, flexBasis: '20%' },
+    { key: 'team', displayName: 'Team', sortable: true, flexBasis: '60%' },
     { key: 'record', displayName: 'Record' }
   ];
   standingsData = [
