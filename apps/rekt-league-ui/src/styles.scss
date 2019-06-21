@@ -13,6 +13,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 // fixes
-.cdk-mouse-focused{
+.cdk-mouse-focused, .cdk-touch-focused, .cdk-program-focused{
   outline: none !important;
 }

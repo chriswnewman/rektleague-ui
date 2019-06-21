@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeasonService } from '../services/season.service';
 
 @Component({
   selector: 'rekt-season-overview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeasonOverviewComponent implements OnInit {
   count = new Array(50);
-  constructor() { }
+  constructor(public seasonService: SeasonService) { }
 
   ngOnInit() {
   }

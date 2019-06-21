@@ -1,0 +1,38 @@
+<button
+  *ngIf="layout === 'button'"
+  mat-raised-button
+  [matMenuTriggerFor]="menu"
+  class="pr-1"
+>
+  Season {{ seasonService.getCurrentlySelectedSeason() }}
+  <mat-icon>arrow_drop_down</mat-icon>
+</button>
+<!-- TODO: configure option to include padding-->
+<mat-nav-list *ngIf="layout === 'sideNav'" class="pt-0">
+  <mat-list-item (click)="listMenuTrigger.openMenu()">
+    <div class="w-100 d-flex justify-content-between align-items-center">
+      Season {{ seasonService.getCurrentlySelectedSeason() }}
+      <button
+        mat-icon-button
+        #listMenuTrigger="matMenuTrigger"
+        [matMenuTriggerFor]="menu"
+      >
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+    </div>
+  </mat-list-item>
+</mat-nav-list>
+<mat-menu
+  #menu="matMenu"
+  [xPosition]="layout === 'sideNav' ? 'after' : 'before'"
+  [overlapTrigger]="layout === 'sideNav'"
+>
+  <button
+    mat-menu-item
+    *ngFor="let opt of seasonOpts"
+    (click)="seasonService.setCurrentlySelectedSeason(opt)"
+    [ngClass]="{ 'bg-p': opt == selectedSeason }"
+  >
+    Season {{ opt }}
+  </button>
+</mat-menu>

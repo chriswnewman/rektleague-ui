@@ -1,8 +1,7 @@
 @import '../../scss/measurements.scss';
 
-.logo{
-  height: 64px;
-  // margin-left: 3rem;
+.logo {
+  height: calc(#{$header-bar-height} - 8px);
 }
 
 .custom-bar{
@@ -14,6 +13,6 @@
   z-index: 1;
 }
 
-.mat-form-field-underline{
-  display: none !important;
+.offset-button-margin{
+  margin-right: -40px;
 }

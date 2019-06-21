@@ -9,9 +9,10 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 import { FormsModule } from '@angular/forms';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SeasonOverviewComponent } from './season-overview/season-overview.component';
+import { SeasonSelectorComponent } from './season-selector/season-selector.component';
 
 @NgModule({
-  declarations: [AppComponent, AppHeaderBarComponent, MainNavComponent, SeasonOverviewComponent],
+  declarations: [AppComponent, AppHeaderBarComponent, MainNavComponent, SeasonOverviewComponent, SeasonSelectorComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([

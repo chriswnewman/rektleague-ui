@@ -22,6 +22,7 @@
       <a mat-list-item [routerLink]="['/champions']" routerLinkActive="bg-p">Champions</a>
       <a mat-list-item [routerLink]="['/graphs']" routerLinkActive="bg-p">Graphs</a>
     </mat-nav-list>
+    <rekt-season-selector *ngIf="(isSmallScreen$ | async)" [layout]="'sideNav'"></rekt-season-selector>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="px-5">
