@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SeasonService } from '../services/season.service';
 
 @Component({
   selector: 'rekt-main-nav',
@@ -14,5 +15,5 @@ export class MainNavComponent {
     .observe(`(max-width: ${this.SMALL_WIDTH_BREAKPOINT}px)`)
     .pipe(map(result => result.matches));
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, public seasonService: SeasonService) {}
 }

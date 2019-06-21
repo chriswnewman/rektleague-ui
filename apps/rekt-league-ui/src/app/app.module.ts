@@ -11,6 +11,11 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { SeasonOverviewComponent } from './season-overview/season-overview.component';
 import { SeasonSelectorComponent } from './season-selector/season-selector.component';
 import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
+import { PlayersOverviewComponent } from './players-overview/players-overview.component';
+import { TeamsOverviewComponent } from './teams-overview/teams-overview.component';
+import { ChampionsOverviewComponent } from './champions-overview/champions-overview.component';
+import { AboutComponent } from './about/about.component';
+import { SeasonHeaderComponent } from './season-header/season-header.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +24,23 @@ import { SideNavContentComponent } from './side-nav-content/side-nav-content.com
     MainNavComponent,
     SeasonOverviewComponent,
     SeasonSelectorComponent,
-    SideNavContentComponent
+    SideNavContentComponent,
+    PlayersOverviewComponent,
+    TeamsOverviewComponent,
+    ChampionsOverviewComponent,
+    AboutComponent,
+    SeasonHeaderComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       [
         { path: 'season', component: SeasonOverviewComponent },
-        { path: 'teams', component: SeasonOverviewComponent },
-        { path: 'players', component: SeasonOverviewComponent },
-        { path: 'champions', component: SeasonOverviewComponent },
+        { path: 'teams', component: TeamsOverviewComponent },
+        { path: 'players', component: PlayersOverviewComponent },
+        { path: 'champions', component: ChampionsOverviewComponent },
         { path: 'graphs', component: SeasonOverviewComponent },
-        { path: 'about', component: SeasonOverviewComponent },
+        { path: 'about', component: AboutComponent },
         { path: '', pathMatch: 'full', redirectTo: 'season' }
       ],
       { initialNavigation: 'enabled', useHash: true }

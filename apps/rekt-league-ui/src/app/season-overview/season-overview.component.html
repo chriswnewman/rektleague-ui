@@ -1,13 +1,9 @@
-<h1 class="season-header d-block w-100 text-center">
-  <span>SEASON</span>
-  <span class="text-p ml-4">
-    {{ seasonService.getCurrentlySelectedSeason() }}
-  </span>
-</h1>
+<rekt-season-header></rekt-season-header>
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 px-0">
-      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden">
+      <!-- Season Champion -->
+      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
         <mat-card-header>
           <mat-card-title>Season Champions</mat-card-title>
         </mat-card-header>
@@ -17,6 +13,26 @@
           alt=""
         />
       </mat-card>
+
+      <!-- Schedule -->
+      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
+        <mat-card-header>
+          <mat-card-title>Schedule</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Schedule carousel goes here
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Standings -->
+      <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
+          <mat-card-header>
+            <mat-card-title>Standings</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            Standings table goes here
+          </mat-card-content>
+        </mat-card>
     </div>
   </div>
 </div>
