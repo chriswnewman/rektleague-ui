@@ -1,12 +1,15 @@
 .logo{
   height: 64px;
-  margin-left: 3rem;
+  // margin-left: 3rem;
 }
 
 .custom-bar{
   height: 72px;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .mat-form-field-underline{
