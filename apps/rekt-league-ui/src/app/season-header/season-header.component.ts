@@ -7,7 +7,7 @@ import { SeasonService } from '../services/season.service';
   styleUrls: ['./season-header.component.scss']
 })
 export class SeasonHeaderComponent implements OnInit {
-  @Input() mode: 'season' | 'header' = 'season';
+  @Input() mode: 'season' | 'about' = 'season';
   constructor(public seasonService: SeasonService) {}
 
   ngOnInit() {}
