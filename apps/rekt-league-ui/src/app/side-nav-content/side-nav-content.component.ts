@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SeasonService } from '../services/season.service';
 
 @Component({
   selector: 'rekt-side-nav-content',
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class SideNavContentComponent implements OnInit {
   @Input() isSmallScreen$: Observable<boolean>;
-  constructor() {}
+  constructor(public seasonService: SeasonService) {}
 
   ngOnInit() {}
 

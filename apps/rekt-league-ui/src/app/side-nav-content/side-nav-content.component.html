@@ -1,6 +1,9 @@
 <div class="h-100 d-flex flex-column">
   <mat-nav-list>
-    <a mat-list-item [routerLink]="['/season']" routerLinkActive="bg-p"
+    <a
+      mat-list-item
+      [routerLink]="['/season', seasonService.getCurrentlySelectedSeason()]"
+      routerLinkActive="bg-p"
       >Season Overview</a
     >
     <a mat-list-item [routerLink]="['/players']" routerLinkActive="bg-p"

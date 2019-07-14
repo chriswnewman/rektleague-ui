@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SeasonService } from '../services/season.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'rekt-season-selector',
@@ -7,11 +8,15 @@ import { SeasonService } from '../services/season.service';
   styleUrls: ['./season-selector.component.css']
 })
 export class SeasonSelectorComponent implements OnInit {
-  seasonOpts = [5, 4, 3, 2, 1];
+  seasonOpts = [4, 3, 2, 1];
   selectedSeason = 'Season 5';
   @Input() layout: 'sideNav' | 'button' = 'button';
 
-  constructor(public seasonService: SeasonService) {}
+  constructor(public seasonService: SeasonService, private router: Router) {}
 
   ngOnInit() {}
+
+  goToSeason(id: number) {
+    this.router.navigate(['season', id]);
+  }
 }

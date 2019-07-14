@@ -18,7 +18,8 @@ import { AboutComponent } from './about/about.component';
 import { SeasonHeaderComponent } from './season-header/season-header.component';
 import { SeasonGraphsComponent } from './season-graphs/season-graphs.component';
 import { TableComponent } from './table/table.component';
-import {BsColMeasurementModule} from '@rekt/bs-col-measurement';
+import { BsColMeasurementModule } from '@rekt/bs-col-measurement';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,20 +41,21 @@ import {BsColMeasurementModule} from '@rekt/bs-col-measurement';
     BrowserModule,
     RouterModule.forRoot(
       [
-        { path: 'season', component: SeasonOverviewComponent },
+        { path: 'season/:seasonId', component: SeasonOverviewComponent },
         { path: 'teams', component: TeamsOverviewComponent },
         { path: 'players', component: PlayersOverviewComponent },
         { path: 'champions', component: ChampionsOverviewComponent },
         { path: 'graphs', component: SeasonGraphsComponent },
         { path: 'about', component: AboutComponent },
-        { path: '', pathMatch: 'full', redirectTo: 'season' }
+        { path: '', pathMatch: 'full', redirectTo: '/season/4' }
       ],
       { initialNavigation: 'enabled', useHash: true }
     ),
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
-    BsColMeasurementModule
+    BsColMeasurementModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

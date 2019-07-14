@@ -8,9 +8,8 @@ describe('TwelveColStickComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TwelveColStickComponent ]
-    })
-    .compileComponents();
+      declarations: [TwelveColStickComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

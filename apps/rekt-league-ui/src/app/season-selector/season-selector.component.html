@@ -30,7 +30,7 @@
   <button
     mat-menu-item
     *ngFor="let opt of seasonOpts"
-    (click)="seasonService.setCurrentlySelectedSeason(opt)"
+    (click)="goToSeason(opt)"
     [ngClass]="{ 'bg-p': opt == selectedSeason }"
   >
     Season {{ opt }}
