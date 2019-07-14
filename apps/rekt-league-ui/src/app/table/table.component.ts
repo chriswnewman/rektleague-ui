@@ -31,7 +31,7 @@ export class TableComponent implements AfterViewInit, OnInit, OnChanges {
   }
 
   ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
-    console.log(changes);
+    // console.log(changes);
     if (changes.data && !changes.data.firstChange) {
       this.dataSource.data = changes.data.currentValue;
     }
