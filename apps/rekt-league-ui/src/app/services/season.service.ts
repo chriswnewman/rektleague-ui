@@ -20,6 +20,6 @@ export class SeasonService {
   }
 
   getSeasonData(id: number) {
-    return this.http.get('http://rektleague.com/season_test/' + id).toPromise();
+    return this.http.get('http://rektleague.com/api/season/' + id).toPromise();
   }
 }
