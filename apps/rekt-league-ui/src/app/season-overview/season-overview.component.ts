@@ -30,7 +30,6 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
       this.seasonService.setCurrentlySelectedSeason(params.seasonId);
       this.updatePageData();
     });
-    this.updatePageData();
   }
 
   ngOnDestroy() {
