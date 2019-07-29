@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -38,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     TableComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       [
         { path: 'season/:seasonId', component: SeasonOverviewComponent },
@@ -51,7 +50,6 @@ import { HttpClientModule } from '@angular/common/http';
       ],
       { initialNavigation: 'enabled', useHash: true }
     ),
-    BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
     BsColMeasurementModule,

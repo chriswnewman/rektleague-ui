@@ -10,7 +10,7 @@ import { SeasonService } from '../services/season.service';
   styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent {
-  private SMALL_WIDTH_BREAKPOINT = 768;
+  private SMALL_WIDTH_BREAKPOINT = 767;
   isSmallScreen$: Observable<boolean> = this.breakpointObserver
     .observe(`(max-width: ${this.SMALL_WIDTH_BREAKPOINT}px)`)
     .pipe(map(result => result.matches));

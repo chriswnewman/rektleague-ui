@@ -18,7 +18,7 @@
     >
   </mat-nav-list>
   <rekt-season-selector
-    *ngIf="(isSmallScreen$ | async)"
+    *ngIf="isSmallScreen$ | async"
     [layout]="'sideNav'"
   ></rekt-season-selector>
 
@@ -32,48 +32,13 @@
       <mat-list-item>
         <div class="container-fluid pr-0">
           <div class="row social-media-row">
-            <div class="col-3 px-0">
+            <div class="col-3 px-0" *ngFor="let link of socialMediaLinks">
               <img
                 class="cursor-pointer"
-                src="http://rektleague.com/media/stats/media_icons/twitter.png"
-                alt=""
-                srcset=""
-                matTooltip="Follow on Twitter"
+                [src]="link.imgSrc"
+                [matTooltip]="link.tooltip"
                 matTooltipPosition="above"
-                (click)="goToTwitter()"
-              />
-            </div>
-            <div class="col-3 px-0">
-              <img
-                class="cursor-pointer"
-                src="http://rektleague.com/media/stats/media_icons/twitch.png"
-                alt=""
-                srcset=""
-                matTooltip="Follow on Twitch"
-                matTooltipPosition="above"
-                (click)="goToTwitch()"
-              />
-            </div>
-            <div class="col-3 px-0">
-              <img
-                class="cursor-pointer"
-                src="http://rektleague.com/media/stats/media_icons/youtube.png"
-                alt=""
-                srcset=""
-                matTooltip="Follow on YouTube"
-                matTooltipPosition="above"
-                (click)="goToYoutube()"
-              />
-            </div>
-            <div class="col-3 px-0">
-              <img
-                class="cursor-pointer"
-                src="http://rektleague.com/media/stats/media_icons/instagram.png"
-                alt=""
-                srcset=""
-                matTooltip="Follow on Instagram"
-                matTooltipPosition="above"
-                (click)="goToInstagram()"
+                (click)="link.clickFunction.apply(this)"
               />
             </div>
           </div>
