@@ -8,18 +8,30 @@
     aria-label="Toggle sidenav"
     mat-icon-button
     (click)="drawer.toggle()"
-    *ngIf="(isSmallScreen$ | async)"
+    *ngIf="isSmallScreen$ | async"
   >
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
-  <img
-    src="assets/logo.png"
-    alt=""
-    srcset=""
-    class="logo"
-    [ngClass]="{ 'mx-auto': isSmallScreen$ | async }"
-  />
-  <!-- </span> -->
+  <span>
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      class="mr-3 d-none d-md-inline-block"
+      (click)="drawer.toggle()"
+      *ngIf="!(isSmallScreen$ | async)"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <img
+      src="assets/logo.png"
+      alt=""
+      srcset=""
+      class="logo"
+      [ngClass]="{ 'mx-auto': isSmallScreen$ | async }"
+    />
+  </span>
+
   <span>
     <span class="d-none d-md-block">
       <rekt-season-selector></rekt-season-selector>
