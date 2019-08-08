@@ -32,15 +32,21 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // need to set configs with custom cell templates in OnInit
     this.standingsTableConfig = [
-      { key: 'rank', displayName: 'Rank', sortable: true, flexBasis: '20%' },
+      {
+        key: 'rank',
+        displayName: 'Rank',
+        sortable: true,
+        flexBasis: 'calc(20% + 40px)'
+      },
       {
         key: 'team',
         displayName: 'Team',
         sortable: true,
         flexBasis: '60%',
-        customCellTemplate: this.teamCellTemplate
+        customCellTemplate: this.teamCellTemplate,
+        cellClassName: 'overflow-visible'
       },
-      { key: 'record', displayName: 'Record' }
+      { key: 'record', displayName: 'Record', flexBasis: '45px' }
     ];
     this.routeSub = this.route.params.subscribe(params => {
       this.seasonService.setCurrentlySelectedSeason(params.seasonId);

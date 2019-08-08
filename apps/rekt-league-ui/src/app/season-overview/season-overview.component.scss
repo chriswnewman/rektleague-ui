@@ -3,3 +3,7 @@ $icon-size: 40px;
   width: $icon-size;
   height: $icon-size;
 }
+
+.team-cell-template {
+  margin-left: -$icon-size;
+}
