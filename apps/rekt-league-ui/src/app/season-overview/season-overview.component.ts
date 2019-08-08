@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  TemplateRef
+} from '@angular/core';
 import { SeasonService } from '../services/season.service';
 import { TableColumnConfig } from '../table/table-column-config';
 import { ActivatedRoute } from '@angular/router';
@@ -10,6 +16,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./season-overview.component.scss']
 })
 export class SeasonOverviewComponent implements OnInit, OnDestroy {
+  @ViewChild('teamCellTemplate', { static: true })
+  teamCellTemplate: TemplateRef<any>;
   count = new Array(50);
   routeSub: Subscription;
   constructor(
@@ -19,13 +27,21 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
 
   standingsData: any[];
 
-  standingsTableConfig: TableColumnConfig[] = [
-    { key: 'rank', displayName: 'Rank', sortable: true, flexBasis: '20%' },
-    { key: 'team', displayName: 'Team', sortable: true, flexBasis: '60%' },
-    { key: 'record', displayName: 'Record' }
-  ];
+  standingsTableConfig: TableColumnConfig[];
 
   ngOnInit() {
+    // need to set configs with custom cell templates in OnInit
+    this.standingsTableConfig = [
+      { key: 'rank', displayName: 'Rank', sortable: true, flexBasis: '20%' },
+      {
+        key: 'team',
+        displayName: 'Team',
+        sortable: true,
+        flexBasis: '60%',
+        customCellTemplate: this.teamCellTemplate
+      },
+      { key: 'record', displayName: 'Record' }
+    ];
     this.routeSub = this.route.params.subscribe(params => {
       this.seasonService.setCurrentlySelectedSeason(params.seasonId);
       this.updatePageData();
@@ -42,9 +58,6 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
       .then((res: any) => {
         console.log(res);
         this.standingsData = res.standings.map(obj => {
-          // temporary fix until custom cell is implemented
-          obj.team = obj.team.name;
-
           obj.record = obj.wins + '-' + obj.losses;
           return obj;
         });
@@ -54,9 +67,6 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
           .getSeasonData(this.seasonService.mostRecentSeason)
           .then((res: any) => {
             this.standingsData = res.standings.map(obj => {
-              // temporary fix until custom cell is implemented
-              obj.team = obj.team.name;
-
               obj.record = obj.wins + '-' + obj.losses;
               return obj;
             });

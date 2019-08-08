@@ -26,7 +26,7 @@
       </mat-card>
     </div>
     <div class="col-12 col-md-6 px-0 pl-md-1 pl-lg-2 pl-xl-3">
-      <!-- Standings -->
+      <!-- Standings TODO: separate component-->
       <mat-card class="mat-elevation-z5 overflow-hidden">
         <mat-card-header>
           <mat-card-title>Team Standings</mat-card-title>
@@ -38,6 +38,17 @@
           ></rekt-table>
         </mat-card-content>
       </mat-card>
+      <!-- Custom cell template for standings table -->
+      <ng-template #teamCellTemplate let-columnData>
+        <div class="team-cell-template d-flex align-items-center">
+          <img
+            [src]="'http://rektleague.com/' + columnData.icon"
+            alt=""
+            class="icon mr-2 d-inline-flex"
+          /><span class="d-inline-flex">{{ columnData.name }}</span>
+          <!-- TODO: route to team with columnData.id -->
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

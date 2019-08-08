@@ -1,9 +1,10 @@
-import { ElementRef } from '@angular/core';
+import { TemplateRef } from '@angular/core';
 
 export interface TableColumnConfig {
   displayName: string;
   key: string;
-  customCellTemplate?: ElementRef;
+  customCellTemplate?: TemplateRef<any>;
+  cellClassName?: string;
   flexBasis?: string;
   filterable?: boolean;
   sortable?: boolean;

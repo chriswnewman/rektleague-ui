@@ -28,9 +28,20 @@
     <mat-cell
       *matCellDef="let row"
       [ngClass]="{ 'flex-shrink': col.flexBasis }"
+      class="{{ col.cellClassName }}"
       [style.flex-basis]="col.flexBasis ? col.flexBasis : '0%'"
     >
-      {{ row[col.key] }}
+      <!-- handle custom cell templates -->
+      <div *ngIf="!col.customCellTemplate; else customCellTemplate">
+        {{ row[col.key] }}
+      </div>
+      <ng-template #customCellTemplate>
+        <!-- for now, only exposing row[col.key] instead of entire row -->
+        <ng-template
+          [ngTemplateOutlet]="col.customCellTemplate"
+          [ngTemplateOutletContext]="{ $implicit: row[col.key] }"
+        ></ng-template>
+      </ng-template>
     </mat-cell>
   </ng-container>
 
