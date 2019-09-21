@@ -28,12 +28,17 @@
     <div class="col-12 col-md-6 px-0 pl-md-1 pl-lg-2 pl-xl-3">
       <!-- Standings TODO: separate component-->
       <mat-card class="mat-elevation-z5 overflow-hidden">
-        <!-- <mat-card-header> -->
         <div class="d-flex justify-content-between">
-          <p class="mat-card-title mb-0">Team Standings</p>
-          <button mat-icon-button [routerLink]="['/teams']"><mat-icon>insert_chart</mat-icon></button>
+          <p class="mat-card-title mb-0">
+            <span
+              class="cursor-pointer d-inline-flex align-items-center"
+              (click)="router.navigate(['/teams'])"
+            >
+              Team Standings <mat-icon class="ml-1">insert_chart</mat-icon>
+            </span>
+          </p>
+          <button mat-icon-button [routerLink]="['/teams']"></button>
         </div>
-        <!-- </mat-card-header> -->
         <mat-card-content *ngIf="standingsData">
           <rekt-table
             [data]="standingsData"
