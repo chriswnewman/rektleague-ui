@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rekt/bs-col-measurement": ["libs/bs-col-measurement/src/index.ts"]
+      "@rekt/bs-col-measurement": ["libs/bs-col-measurement/src/index.ts"],
+      "@rekt/rekt-league-data": ["libs/rekt-league-data/src/index.ts"]
     },
     "rootDir": "."
   },

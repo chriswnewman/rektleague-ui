@@ -149,6 +149,31 @@
           "styleext": "scss"
         }
       }
+    },
+    "rekt-league-data": {
+      "root": "libs/rekt-league-data",
+      "sourceRoot": "libs/rekt-league-data/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/rekt-league-data/tsconfig.lib.json",
+              "libs/rekt-league-data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/rekt-league-data/jest.config.js",
+            "tsConfig": "libs/rekt-league-data/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
