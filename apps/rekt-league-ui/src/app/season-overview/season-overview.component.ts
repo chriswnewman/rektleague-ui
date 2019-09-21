@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { SeasonService } from '../services/season.service';
 import { TableColumnConfig } from '../table/table-column-config';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -22,7 +22,8 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
   routeSub: Subscription;
   constructor(
     public seasonService: SeasonService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public router: Router
   ) {}
 
   standingsData: any[];
@@ -69,6 +70,7 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
         });
       })
       .catch(err => {
+        this.seasonService.setCurrentlySelectedSeason(this.seasonService.mostRecentSeason);
         this.seasonService
           .getSeasonData(this.seasonService.mostRecentSeason)
           .then((res: any) => {

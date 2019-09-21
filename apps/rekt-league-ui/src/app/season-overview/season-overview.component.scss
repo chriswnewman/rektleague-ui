@@ -5,5 +5,5 @@ $icon-size: 40px;
 }
 
 .team-cell-template {
-  margin-left: -$icon-size;
+  margin-left: calc(-#{$icon-size} - .5rem - .25rem);
 }
