@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SeasonOverview } from '@rekt/rekt-league-data';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class SeasonService {
     this.currentlySelectedSeason = newSeason;
   }
 
-  getSeasonData(id: number) {
-    return this.http.get('http://rektleague.com/api/season/' + id).toPromise();
+  getSeasonData(id: number): Promise<SeasonOverview> {
+    return this.http.get<SeasonOverview>('http://rektleague.com/api/season/' + id).toPromise();
   }
 }

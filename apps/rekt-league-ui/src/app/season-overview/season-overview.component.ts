@@ -9,6 +9,7 @@ import { SeasonService } from '../services/season.service';
 import { TableColumnConfig } from '../table/table-column-config';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { SeasonOverview } from '@rekt/rekt-league-data';
 
 @Component({
   selector: 'rekt-season-overview',
@@ -62,10 +63,10 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
   private updatePageData() {
     this.seasonService
       .getSeasonData(this.seasonService.getCurrentlySelectedSeason())
-      .then((res: any) => {
-        console.log(res);
-        this.standingsData = res.standings.map(obj => {
-          obj.record = obj.wins + '-' + obj.losses;
+      .then((seasonOverview: SeasonOverview) => {
+        console.log(seasonOverview);
+        this.standingsData = seasonOverview.standings.map(obj => {
+          obj['record'] = obj.wins + '-' + obj.losses;
           return obj;
         });
       })
@@ -73,9 +74,9 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
         this.seasonService.setCurrentlySelectedSeason(this.seasonService.mostRecentSeason);
         this.seasonService
           .getSeasonData(this.seasonService.mostRecentSeason)
-          .then((res: any) => {
-            this.standingsData = res.standings.map(obj => {
-              obj.record = obj.wins + '-' + obj.losses;
+          .then((seasonOverview: SeasonOverview) => {
+            this.standingsData = seasonOverview.standings.map(obj => {
+              obj['record'] = obj.wins + '-' + obj.losses;
               return obj;
             });
           });
