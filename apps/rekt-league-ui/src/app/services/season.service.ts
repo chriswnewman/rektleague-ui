@@ -21,6 +21,8 @@ export class SeasonService {
   }
 
   getSeasonData(id: number): Promise<SeasonOverview> {
-    return this.http.get<SeasonOverview>('http://rektleague.com/api/season/' + id).toPromise();
+    return this.http
+      .get<SeasonOverview>('http://rektleague.com/api/season/' + id)
+      .toPromise();
   }
 }

@@ -6,8 +6,8 @@ import { ChampionPickRate } from './champ-pick-rate';
 export interface SeasonOverview {
   standings: TeamStandingDTO[];
   schedule: Week[];
-  season: number,
-  winner?: TeamRefDTO,
-  banner: string,
-  top_picks: ChampionPickRate[]
+  season: number;
+  winner?: TeamRefDTO;
+  banner: string;
+  top_picks: ChampionPickRate[];
 }

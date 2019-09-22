@@ -1,5 +1,5 @@
 export interface TeamRefDTO {
-  id: number,
-  icon: string,
-  name: string
+  id: number;
+  icon: string;
+  name: string;
 }

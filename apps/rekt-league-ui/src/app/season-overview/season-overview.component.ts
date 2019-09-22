@@ -71,7 +71,9 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
         });
       })
       .catch(err => {
-        this.seasonService.setCurrentlySelectedSeason(this.seasonService.mostRecentSeason);
+        this.seasonService.setCurrentlySelectedSeason(
+          this.seasonService.mostRecentSeason
+        );
         this.seasonService
           .getSeasonData(this.seasonService.mostRecentSeason)
           .then((seasonOverview: SeasonOverview) => {
