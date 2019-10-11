@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./season-selector.component.css']
 })
 export class SeasonSelectorComponent implements OnInit {
-  seasonOpts = [4, 3, 2, 1];
+  seasonOpts = [5, 4, 3, 2, 1];
   selectedSeason = 'Season 5';
   @Input() layout: 'sideNav' | 'button' = 'button';
 

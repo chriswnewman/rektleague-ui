@@ -50,7 +50,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
         { path: 'champions', component: ChampionsOverviewComponent },
         { path: 'graphs', component: SeasonGraphsComponent },
         { path: 'about', component: AboutComponent },
-        { path: '', pathMatch: 'full', redirectTo: '/season/4' }
+        { path: '', pathMatch: 'full', redirectTo: '/season/5' }
       ],
       { initialNavigation: 'enabled', useHash: true }
     ),
