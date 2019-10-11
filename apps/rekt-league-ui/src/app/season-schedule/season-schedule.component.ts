@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./season-schedule.component.scss']
 })
 export class SeasonScheduleComponent implements OnInit {
-
+  slides = [
+    {foo: 'bar', image: 'assets/logo.png'},
+    {foo: 'bar', image: 'assets/logo.png'},
+    {foo: 'bar', image: 'assets/logo.png'}
+  ]
   constructor() { }
 
   ngOnInit() {
