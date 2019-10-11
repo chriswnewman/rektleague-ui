@@ -19,6 +19,9 @@ import { SeasonGraphsComponent } from './season-graphs/season-graphs.component';
 import { TableComponent } from './table/table.component';
 import { BsColMeasurementModule } from '@rekt/bs-col-measurement';
 import { HttpClientModule } from '@angular/common/http';
+import { SeasonScheduleComponent } from './season-schedule/season-schedule.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     SeasonHeaderComponent,
     SeasonGraphsComponent,
-    TableComponent
+    TableComponent,
+    SeasonScheduleComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -53,6 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularMaterialModule,
     FormsModule,
     BsColMeasurementModule,
+    MatCarouselModule.forRoot(),
     HttpClientModule
   ],
   providers: [],
