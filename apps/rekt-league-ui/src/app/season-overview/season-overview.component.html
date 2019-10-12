@@ -2,14 +2,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 px-0" *ngIf="seasonOverview?.winner">
-      <!-- Season Champion -->
+      <!-- Season Champions -->
       <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
-        <mat-card-header>
-          <mat-card-title>Season Champions</mat-card-title>
-        </mat-card-header>
+        <p class="mat-card-title mb-0">
+          <span class="cursor-pointer d-inline-flex align-items-center">
+            Season Champions
+          </span>
+        </p>
         <img
           class="mat-card-image"
-          src="http://rektleague.com/{{seasonOverview.winner.splash}}"
+          src="http://rektleague.com/{{ seasonOverview.winner.splash }}"
           alt=""
         />
       </mat-card>
@@ -17,9 +19,11 @@
     <div class="col-12 col-md-6 px-0 pr-md-1 pr-lg-2 pr-xl-3">
       <!-- Schedule -->
       <mat-card class="mat-elevation-z5 overflow-hidden mb-5">
-        <mat-card-header>
-          <mat-card-title>Match Schedule</mat-card-title>
-        </mat-card-header>
+        <p class="mat-card-title mb-0">
+          <span class="d-inline-flex align-items-center">
+            Match Schedule
+          </span>
+        </p>
         <rekt-season-schedule></rekt-season-schedule>
       </mat-card>
     </div>
