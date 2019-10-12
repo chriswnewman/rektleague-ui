@@ -1,7 +1,7 @@
 <rekt-season-header></rekt-season-header>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 px-0">
+    <div class="col-12 px-0" *ngIf="seasonOverview?.winner">
       <!-- Season Champion -->
       <mat-card class="mat-elevation-z5 pb-0 overflow-hidden mb-5">
         <mat-card-header>
@@ -9,7 +9,7 @@
         </mat-card-header>
         <img
           class="mat-card-image"
-          src="http://rektleague.com/media/stats/team_splashes/infernal-drake_ce4BE7n.png"
+          src="http://rektleague.com/{{seasonOverview.winner.splash}}"
           alt=""
         />
       </mat-card>

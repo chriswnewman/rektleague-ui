@@ -21,15 +21,15 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
   teamCellTemplate: TemplateRef<any>;
   count = new Array(50);
   routeSub: Subscription;
+  seasonOverview: SeasonOverview;
+  standingsData: any[];
+  standingsTableConfig: TableColumnConfig[];
+
   constructor(
     public seasonService: SeasonService,
     private route: ActivatedRoute,
     public router: Router
   ) {}
-
-  standingsData: any[];
-
-  standingsTableConfig: TableColumnConfig[];
 
   ngOnInit() {
     // need to set configs with custom cell templates in OnInit
@@ -64,11 +64,12 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
     this.seasonService
       .getSeasonData(this.seasonService.getCurrentlySelectedSeason())
       .then((seasonOverview: SeasonOverview) => {
-        console.log(seasonOverview);
+        this.seasonOverview = seasonOverview;
         this.standingsData = seasonOverview.standings.map(obj => {
           obj['record'] = obj.wins + '-' + obj.losses;
           return obj;
         });
+        console.log(this.seasonOverview);
       })
       .catch(err => {
         this.seasonService.setCurrentlySelectedSeason(
