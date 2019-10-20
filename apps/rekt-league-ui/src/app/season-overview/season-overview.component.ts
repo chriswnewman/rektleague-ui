@@ -10,6 +10,7 @@ import { TableColumnConfig } from '../table/table-column-config';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SeasonOverview } from '@rekt/rekt-league-data';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'rekt-season-overview',
@@ -27,6 +28,7 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
 
   constructor(
     public seasonService: SeasonService,
+    public imageService: ImageService,
     private route: ActivatedRoute,
     public router: Router
   ) {}

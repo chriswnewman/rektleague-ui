@@ -11,7 +11,7 @@
         </p>
         <img
           class="mat-card-image"
-          src="http://rektleague.com/{{ seasonOverview.winner.splash }}"
+          [src]="imageService.imageUrlBase + seasonOverview.winner.splash"
           alt=""
         />
       </mat-card>
@@ -24,7 +24,7 @@
             Match Schedule
           </span>
         </p>
-        <rekt-season-schedule></rekt-season-schedule>
+        <rekt-season-schedule [schedule]="seasonOverview?.schedule"></rekt-season-schedule>
       </mat-card>
     </div>
     <div class="col-12 col-md-6 px-0 pl-md-1 pl-lg-2 pl-xl-3">
@@ -52,7 +52,7 @@
       <ng-template #teamCellTemplate let-columnData>
         <div class="team-cell-template d-flex align-items-center px-1">
           <img
-            [src]="'http://rektleague.com/' + columnData.icon"
+            [src]="imageService.imageUrlBase + columnData.icon"
             alt=""
             class="icon mr-2 d-inline-flex"
           /><span class="d-inline-flex">{{ columnData.name }}</span>
