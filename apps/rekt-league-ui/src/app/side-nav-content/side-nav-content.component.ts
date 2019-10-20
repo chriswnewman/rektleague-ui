@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SeasonService } from '../services/season.service';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'rekt-side-nav-content',
@@ -9,7 +10,7 @@ import { SeasonService } from '../services/season.service';
 })
 export class SideNavContentComponent {
   @Input() isSmallScreen$: Observable<boolean>;
-  constructor(public seasonService: SeasonService) {}
+  constructor(public seasonService: SeasonService, private imageService: ImageService) {}
 
   socialMediaLinks: {
     imgSrc: string;
@@ -17,22 +18,22 @@ export class SideNavContentComponent {
     tooltip: string;
   }[] = [
     {
-      imgSrc: 'http://rektleague.com/media/stats/media_icons/twitter.png',
+      imgSrc: this.imageService.imageUrlBase + '/media/stats/media_icons/twitter.png',
       clickFunction: this.goToTwitter,
       tooltip: 'Follow On Twitter'
     },
     {
-      imgSrc: 'http://rektleague.com/media/stats/media_icons/twitch.png',
+      imgSrc: this.imageService.imageUrlBase + '/media/stats/media_icons/twitch.png',
       clickFunction: this.goToTwitch,
       tooltip: 'Follow On Twitch'
     },
     {
-      imgSrc: 'http://rektleague.com/media/stats/media_icons/youtube.png',
+      imgSrc: this.imageService.imageUrlBase + '/media/stats/media_icons/youtube.png',
       clickFunction: this.goToYoutube,
       tooltip: 'Follow On YouTube'
     },
     {
-      imgSrc: 'http://rektleague.com/media/stats/media_icons/instagram.png',
+      imgSrc: this.imageService.imageUrlBase + '/media/stats/media_icons/instagram.png',
       clickFunction: this.goToInstagram,
       tooltip: 'Follow On Instagram'
     }

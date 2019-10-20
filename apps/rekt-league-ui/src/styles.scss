@@ -33,3 +33,8 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+// mat carousel override
+.carousel > button {
+  top: 24px !important;
+}
