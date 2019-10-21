@@ -21,6 +21,7 @@ import { BsColMeasurementModule } from '@rekt/bs-col-measurement';
 import { HttpClientModule } from '@angular/common/http';
 import { SeasonScheduleComponent } from './season-schedule/season-schedule.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { TeamAbbreviationPipe } from './pipes/team-abbreviation.pipe';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     SeasonHeaderComponent,
     SeasonGraphsComponent,
     TableComponent,
-    SeasonScheduleComponent
+    SeasonScheduleComponent,
+    TeamAbbreviationPipe
   ],
   imports: [
     BrowserAnimationsModule,

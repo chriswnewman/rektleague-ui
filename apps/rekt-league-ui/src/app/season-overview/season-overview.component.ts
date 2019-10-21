@@ -8,9 +8,11 @@ import {
 import { SeasonService } from '../services/season.service';
 import { TableColumnConfig } from '../table/table-column-config';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { SeasonOverview } from '@rekt/rekt-league-data';
 import { ImageService } from '../services/image.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'rekt-season-overview',
@@ -26,7 +28,13 @@ export class SeasonOverviewComponent implements OnInit, OnDestroy {
   standingsData: any[];
   standingsTableConfig: TableColumnConfig[];
 
+  private SMALL_WIDTH_BREAKPOINT = 767;
+  isSmallScreen$: Observable<boolean> = this.breakpointObserver
+    .observe(`(max-width: ${this.SMALL_WIDTH_BREAKPOINT}px)`)
+    .pipe(map(result => result.matches));
+
   constructor(
+    private breakpointObserver: BreakpointObserver,
     public seasonService: SeasonService,
     public imageService: ImageService,
     private route: ActivatedRoute,

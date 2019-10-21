@@ -9,6 +9,7 @@ import { ImageService } from '../services/image.service';
 })
 export class SeasonScheduleComponent implements OnInit {
   @Input() schedule: Week[];
+  @Input() abbreviateTeamNames = false;
   constructor(public imageService: ImageService) { }
 
   ngOnInit() {

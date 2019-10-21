@@ -24,7 +24,10 @@
             Match Schedule
           </span>
         </p>
-        <rekt-season-schedule [schedule]="seasonOverview?.schedule"></rekt-season-schedule>
+        <rekt-season-schedule
+          [schedule]="seasonOverview?.schedule"
+          [abbreviateTeamNames]="isSmallScreen$ | async"
+        ></rekt-season-schedule>
       </mat-card>
     </div>
     <div class="col-12 col-md-6 px-0 pl-md-1 pl-lg-2 pl-xl-3">
