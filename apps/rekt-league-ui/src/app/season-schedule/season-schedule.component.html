@@ -1,8 +1,9 @@
+<div>
 <mat-carousel
   timings="250ms ease-in"
   [autoplay]="false"
   color="primary"
-  maxWidth="100%"
+  maxWidth="auto"
   proportion="100"
   [hideArrows]="false"
   [hideIndicators]="false"
@@ -18,7 +19,7 @@
     [hideOverlay]="true"
 
   >
-    <div class="h-100 overflow-y-auto w-100 slide-content">
+    <div class="h-100 w-100">
       <h2 class="week text-center">{{week.name}}</h2>
       <p class="text-center" *ngIf="week.date">{{week.date}}</p>
       <table class="w-100">
@@ -33,3 +34,4 @@
     </div>
   </mat-carousel-slide>
 </mat-carousel>
+</div>
