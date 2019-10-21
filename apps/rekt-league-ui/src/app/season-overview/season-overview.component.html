@@ -25,6 +25,7 @@
           </span>
         </p>
         <rekt-season-schedule
+          *ngIf="seasonOverview"
           [schedule]="seasonOverview?.schedule"
           [abbreviateTeamNames]="isSmallScreen$ | async"
         ></rekt-season-schedule>
